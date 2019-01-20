@@ -1,0 +1,24 @@
+<!--
+  Pagina para o Usuario Externo possa Enserir um Numero de Telefone
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Degra Arte - Adicionar Número</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+    <div text-justify>
+        <h5 >Insira o seu Número de Telefone Fixo ou Móvel para que possamos agilizar melhor o seu agendamento na  <strong>Degra Arte</strong> que você está tentando recuperar.</h5>
+        <h5>Esse Número pode ser Alterado posteriomente no seu Perfil.</h5>
+        </div>
+    <ion-item >
+      <ion-input icon-start type="email" [(ngModel)]='user.telefone' [ngModelOptions]='{ standalone:true}'  min-length='10'  placeholder="Seu Número..." aria-label="Telefone" aria-describedby="basic-addon1">
+      </ion-input>
+      </ion-item>
+      <button ion-button full type="button" class="btn btn-outline-primary btn-lg" (click)='cadrastarnumero()'>Cadrastar</button>
+  </ion-content>
+  

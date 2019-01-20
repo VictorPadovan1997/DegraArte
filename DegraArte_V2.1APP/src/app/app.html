@@ -1,0 +1,40 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Menu</ion-title>
+        </ion-toolbar>
+        
+    </ion-header>
+
+    <ion-content class="outer-content">
+
+        <ion-list inset>
+            <ion-list-header>
+                Navegação:
+            </ion-list-header>
+            <button menuClose ion-item (click)="abrirPerfil()" >
+                    <ion-icon padding name='contact'></ion-icon>
+                    Perfil
+                </button>
+            <button menuClose ion-item (click)="abrePaginaServ()" >
+                    <ion-icon padding name='home'></ion-icon>
+                    Serviços Oferecidos
+                </button>
+         <button menuClose ion-item (click)="abrePaginaReal()" >
+                        <ion-icon padding name='images'></ion-icon>
+                        Serviços Realizados
+                    </button>
+            <button menuClose ion-item (click)="abrePagina(pagina)" *ngFor="let pagina of paginas">
+                <ion-icon padding name='{{pagina.icon}}'></ion-icon>
+                {{pagina.titulo}}
+            </button>
+        </ion-list>
+        <ion-list no-lines>
+                
+                
+            </ion-list>
+    </ion-content>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" swipeBackEnabled="false" #content></ion-nav>

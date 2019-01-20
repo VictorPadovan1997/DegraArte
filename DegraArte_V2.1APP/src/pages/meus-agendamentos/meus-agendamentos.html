@@ -1,0 +1,33 @@
+<!--
+  - Pagina de Perfil
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Meus Agendamentos
+    </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Profissional</th>
+        <th scope="col">Data-Hora</th>
+        <th scope="col">Valor(R$)</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of minhaAgenda" (click)=' agendaOpcao(item)'>
+        <th scope="row">{{item.pro_nome}}</th>
+        <td>{{item.age_hora}}</td>
+        <td>{{item.age_fatura}}</td>
+        <td>{{item.age_status}}</td>
+      </tr>
+      </tbody>
+      </table>
+    </ion-content>

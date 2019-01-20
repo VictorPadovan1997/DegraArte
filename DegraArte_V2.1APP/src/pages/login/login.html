@@ -1,0 +1,72 @@
+<!--
+  -   Pagina de Login do Aplicativo
+  -   Zaqueu Pereira
+-->
+
+<!-- -->
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <img src="assets/img/degra.jpg">
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]='login.email' [ngModelOptions]='{ standalone:true}' required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password"[(ngModel)]='login.senha' [ngModelOptions]='{ standalone:true}' required></ion-input>
+      </ion-item>
+    </form>
+
+    <p text-right ion-text color="secondary" tappable (click)='recuperar()'><strong>Esqueceu a Senha?</strong></p>
+
+    <div>
+      <button ion-button icon-start block color="dark" tappable (click)='loginDegra()'>
+        <ion-icon name="log-in"></ion-icon>
+       Entrar
+      </button>
+      
+      <div text-center margin-top>
+        <span ion-text color="secondary" tappable (click)='registrar()' >Novo Aqui? <strong>Registrar</strong></span>
+      </div>
+  
+    </div>
+      <p text-center ion-text color="secondary">ou Entre com:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-facebook" (click)='logarFace()'>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-gplus" color='danger' (click)='loginGoogle()'>
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+
+    <!-- Other links -->
+    
+</ion-content>

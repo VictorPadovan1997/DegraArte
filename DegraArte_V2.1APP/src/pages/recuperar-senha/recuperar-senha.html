@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Degra Arte - Recuperar Conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="container">
+  <div text-justify>
+      <h5 >Insira o endereço de email da conta <strong>Degra Arte</strong> que você está tentando recuperar.</h5>
+      <h5>Esta opção enviará uma Senha  Provisoria ao seu endereço de e-mail 
+         registrado previamente na Conta <strong>Degra Arte</strong>.</h5>
+      </div>
+  <ion-item >
+    <ion-input icon-start type="email" [(ngModel)]='user.email' [ngModelOptions]='{ standalone:true}'    placeholder="Email de Recuperação" aria-label="Email" aria-describedby="basic-addon1">
+    </ion-input>
+    </ion-item>
+    <button ion-button full type="button" class="btn btn-outline-primary btn-lg" (click)='recuperarSenha()'>Enviar</button>
+</ion-content>

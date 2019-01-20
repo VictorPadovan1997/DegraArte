@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Carrinho</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="home()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding >
+  <ion-list *ngIf='!finalizar'>
+    <h3>Carrinho - Lista</h3>
+    <div class="table-responsive table-striped">
+      <table class="table">
+        <thead>
+          <th>Serviço</th>
+          <th>Quant.</th>
+          <th>Valor(und)</th>
+          <th>Valor Total</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of listacar" (click)='doOpcao(car)'>
+            <td>{{car.data.ser_nome}}</td>
+            <td>{{car.qte}}</td>
+            <td>R${{ car.data.ser_valor}}</td>
+            <td>{{ getValor(car.data.ser_valor*car.qte)}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button ion-button full (click)='alterarForm()'>Realizar Agendamento</button>
+  </ion-list>
+  <!--- Finalizar Compra -->
+  <ion-list *ngIf='finalizar'  style="font-size: 35px">
+    <form [formGroup]='form'>
+      <div text-center>
+            <h3><strong>Nome: {{usuario.nome}}</strong></h3>
+      </div>
+      <div text-center>
+              <h4><strong>Telefone: {{usuario.telefone}}</strong></h4>
+      </div>
+      <ion-item>
+        <ion-label for='txtfone'>Profissional</ion-label>
+        <ion-select formControlName='txtprof'>
+          <ion-option *ngFor='let item of listaPro' value='{{item.pro_id}}'>{{item.pro_nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Agendar Para:</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY"  min="{{getdata()}}" yearValues="{{getAno()}}" cancelText='Cancelar' doneText='Confirmar' pickerFormat="YYYY-MM-DD" formControlName='txtdata'></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Horário:</ion-label>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" min='09:00' max='19:00'  minuteValues="00" cancelText='Cancelar' 
+        doneText='Confirmar' formControlName='txthorario'></ion-datetime>
+      </ion-item>
+      <ion-item >
+        <h3 class='font-weight-bold' item-end >Valor da Fatura  {{getValor()}}</h3>
+      </ion-item>
+      <fieldset>
+        <legend>Formas de Pagamento</legend>
+      <ion-item>       
+          <img (click)='comprar()'class="logopay" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_150x38.png" alt="PayPal Logo">        
+        <button ion-button full large (click)='pagarMaos()' color='secondary'>Pagamentos em Dinheiro</button>
+      </ion-item>
+      <div centro>
+       
+      </div>
+      <ion-input type='hidden' formControlName='txtfatura' value='{{fatura}}'></ion-input>
+    </fieldset>
+    </form>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,68 @@
+<!--
+  - Pagina de Perfil
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Perfil - Degra Arte
+    </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding text-center>
+<div *ngIf='usuario.login'>
+<img height="100" width="80" src='{{usuario.img}}' class='rounded'>
+<h1>{{usuario.nome}}</h1>
+<h3>{{usuario.email}}</h3>
+<ion-item>
+    <ion-label fixed>Seu Número :</ion-label>
+        <ion-input type='number' [(ngModel)]='usuario.telefone' [ngModelOptions]='{ standalone:true}'></ion-input>
+    </ion-item>
+<button ion-button icon-start block rounded color="primary"  (click)='salvarAlt()' tappable>
+      <ion-icon name="paper-plane"></ion-icon>Salvar
+    </button>
+<button ion-button icon-start block color="dark" (click)='logout()' tappable >
+    <ion-icon name="log-in"></ion-icon>
+   Logout
+  </button>
+  
+</div>
+<div *ngIf='!usuario.login' text-center>
+  <form >
+  <div *ngIf='!alterarsenha'>
+  <ion-item>
+    <ion-label fixed>Nome:</ion-label>
+    <ion-input type='text' [(ngModel)]='usuario.nome' [ngModelOptions]='{ standalone:true}'></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label fixed>Telefone:</ion-label>
+  <ion-input  type='number'[(ngModel)]='usuario.telefone' [ngModelOptions]='{ standalone:true}'></ion-input>
+</ion-item>
+<ion-item>
+    <ion-label fixed>Email:</ion-label>
+    <ion-input type='email' [(ngModel)]='usuario.email' [ngModelOptions]='{ standalone:true}'></ion-input>
+</ion-item>
+</div>
+<button ion-button color="dark"  (click)='AltSenha()' tappable>{{msg}} </button>
+<div *ngIf='alterarsenha'>
+  <ion-item>
+    <ion-label fixed>Nova Senha:</ion-label>
+        <ion-input type='password' [(ngModel)]='usuario.novasenha1' [ngModelOptions]='{ standalone:true}'></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label fixed>Re-digiter:</ion-label>
+        <ion-input type='password' [(ngModel)]='usuario.novasenha2' [ngModelOptions]='{ standalone:true}'></ion-input>
+    </ion-item>
+</div>
+   <button ion-button icon-start block rounded color="primary"  (click)='salvarAlt()' tappable>
+      <ion-icon name="paper-plane"></ion-icon>Salvar
+    </button>
+  <button ion-button icon-start block color="dark"  (click)='logout()' tappable>
+      <ion-icon name="log-in"></ion-icon>
+     Logout
+    </button>
+</form>
+</div>
+</ion-content>

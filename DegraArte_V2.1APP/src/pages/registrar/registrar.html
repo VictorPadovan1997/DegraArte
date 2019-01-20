@@ -1,0 +1,96 @@
+<!--
+  Generated template for the RegistrarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- -->
+<ion-content class="auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Degra Arte</strong> Barbearia 
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" #form="ngForm" (ngSubmit)="registrar()">      
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Nome Completo
+        </ion-label>
+        <ion-input type="text" [(ngModel)]='novoUsuario.nome' [ngModelOptions]='{ standalone:true}'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" [(ngModel)]='novoUsuario.email' [ngModelOptions]='{ standalone:true}'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="call" item-start class="text-primary"></ion-icon>
+            Telefone
+        </ion-label>
+        <ion-input type="number" [(ngModel)]='novoUsuario.telefone' [ngModelOptions]='{ standalone:true}'></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password" [(ngModel)]='novoUsuario.senha' [ngModelOptions]='{ standalone:true}'></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Confirmar-Senha
+        </ion-label>
+        <ion-input type="password" [(ngModel)]='novoUsuario.senha2' [ngModelOptions]='{ standalone:true}'></ion-input>
+      </ion-item>
+      <div *ngIf='erro.erro' class="alert alert-danger" role="alert">
+          {{erro.msg}}
+      </div>
+    <div margin-top>
+      <button ion-button block color="dark" tappable type="submit">
+        Registrar
+      </button>
+    </div>
+
+    </form>
+    <div margin-top>
+      <p text-center ion-text color="secondary">ou Entre com:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-facebook">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-gplus" color='danger'>
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="primary" tappable (click)="login()">Já Possui Conta?<strong style="padding-left: 2px">Entrar</strong></span>
+    </div>
+
+  </div>
+</ion-content>

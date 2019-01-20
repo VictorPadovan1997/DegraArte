@@ -1,0 +1,43 @@
+<ion-header no-border>
+    <ion-navbar>
+     </ion-navbar>
+  </ion-header>
+  
+  <ion-content no-bounce>
+    <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+  
+      <ion-slide>
+        <img src="assets/img/ica-slidebox-img-1.png" class="slide-image"/>
+        <p class="slide-title">
+          Descubra como marcar <b>Horários</b>
+          Ficou muito mais prático e rápido.
+        </p>
+        <p>
+          Deslize para <b>prosseguir.</b> 
+        </p>
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="assets/img/ica-slidebox-img-2.png" class="slide-image"/>
+        <h2 class="slide-title" >Agendamento Online</h2>
+        <p><b>Defina</b> serviços e o profissional com quem deseja agendar.</p>
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="assets/img/Logo.png" class="slide-image"/>
+        <h2 class="slide-title"></h2>
+        <p>Desenvolvido por VTLCloud </p>
+      </ion-slide>
+  
+      <ion-slide>
+        <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>
+        <p>Ao iniciar deslize o dedo para a Direita para acessar o Menu</p>
+        <button ion-button icon-end large clear (click)="startApp()">
+        COMEÇAR.
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-slide>
+  
+    </ion-slides>
+  </ion-content>
+  

@@ -1,0 +1,37 @@
+[
+    {
+      "nome": "Corte Simples",
+      "preco": "R$20.00",
+      "tempo": "Tempo Estimulado 45Minutos"
+    },
+    {
+      "nome": "Corte Navalhado",
+      "preco": "R$15.00",
+      "tempo": "Tempo Estimulado 1Hora"
+    },
+    {
+        "nome": "Barba",
+        "preco": "R$15.00",
+        "tempo": "Tempo Estimulado 30Minutos"
+    },
+    {
+        "nome": "Pezinho",
+        "preco": "R$8.00",
+        "tempo": "Tempo Estimulado 20Minutos"
+    },
+    {
+        "nome": "Sobrancelha",
+        "preco": "R$5.00",
+        "tempo": "Tempo Estimulado 10Minutos"
+    },
+    {
+        "nome": "Pigmentação Cabelo",
+        "preco": "R$10.00",
+        "tempo": "Tempo Estimulado 45Minutos"
+    },
+    {
+        "nome": "Pigmentação Barba",
+        "preco": "R$5.00",
+        "tempo": "Tempo Estimulado 30Minutos"
+    }
+  ]

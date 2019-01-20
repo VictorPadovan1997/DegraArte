@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Nossos Serviços
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="doCarrinho()">
+          <ion-icon name="basket"></ion-icon>
+        </button>
+      </ion-buttons>
+      </ion-navbar>
+  
+</ion-header>
+
+<ion-content padding>
+    <div class="about-header">
+        <img src="assets/img/degra.jpg">
+        <h4 style="text-align:center;">Nossos Serviços</h4>
+      </div>        
+ 
+   <ion-list >
+      <ion-item *ngFor="let item of servico" >
+        <ion-card>
+          <img *ngIf='(item.ser_foto != null)'src="{{img+item.ser_foto}}" >         
+        
+          <ion-item text-center >
+            <h1 *ngIf='!(item.ser_foto != null)' style="margin-top: 2%" class="font-weight-bold">{{item.ser_nome}}</h1>
+            <h2 *ngIf='(item.ser_foto != null)' style="margin-top: 2%" class="font-weight-bold">{{item.ser_nome}}</h2>
+             <h5 >{{item.ser_descricao}}</h5>
+              <h4><strong>Duração Média {{item.ser_duracao}} min</strong></h4>
+               <span class="font-weight-bold"> Valor R$ {{item.ser_valor}} </span>
+            </ion-item>
+            <ion-item>
+              <button ion-button icon-start full (click)="adicionarCar(item)">
+                <ion-icon name="add-circle" ></ion-icon>
+               Adicionar ao Carrinho
+              </button>
+            </ion-item>
+        
+        </ion-card>
+      </ion-item>
+  </ion-list>  
+</ion-content>

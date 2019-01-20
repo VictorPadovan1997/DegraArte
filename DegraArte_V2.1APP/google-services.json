@@ -1,0 +1,45 @@
+{
+  "project_info": {
+    "project_number": "511447669771",
+    "firebase_url": "https://degraartenotificacoes.firebaseio.com",
+    "project_id": "degraartenotificacoes",
+    "storage_bucket": "degraartenotificacoes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511447669771:android:e7419a3406d78ab9",
+        "android_client_info": {
+          "package_name": "growth.mobile.degraartev1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "511447669771-bfji48fmp11h2gcuflutffo1dje90ksp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFJzYdfK0qxJWa2iE2JjTmYuCqxCywAB4"
+        },
+        {
+          "current_key": "AIzaSyDFJzYdfK0qxJWa2iE2JjTmYuCqxCywAB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

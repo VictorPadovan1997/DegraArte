@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Serviços Reazlizados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-card *ngFor='let item of lista'>
+  <ion-card-content>
+    <ion-card-title>
+      {{item.sre_nome}}
+    </ion-card-title>
+    <p>{{item.sre_descricao}}</p>
+  </ion-card-content>
+</ion-card>
+</ion-content>
